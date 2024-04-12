@@ -1,0 +1,40 @@
+<?php
+  include "koneksi.php";
+?>
+
+<html>
+<head>
+    <title>CODING PHP UNTUK MENCARI NILAI TERTINGGI DAN TERENDAH PADA DATABASE MYSQL</title>
+</head>
+<body>
+    <p><b>Data Movie</b></p>
+    <p>
+        <table border="1" cellpadding="2">
+            <tr bgcolor="#e5e5e5">
+                <td>KODE</td>
+                <td>NAME</td>
+                <td>STOCK DVD</td>
+                <td>PRICE</td>
+              </tr>
+            <?php
+            $no=0;
+            $query    =mysqli_query($koneksi, "SELECT * FROM movie");
+            while($result    =mysqli_fetch_array($query)){
+            $stock[]        =$result['stock_dvd'];
+            $no++
+            ?>
+            <tr>
+                <td><?php echo $result['code']?></td>
+                <td><?php echo $result['name']?></td>
+                <td><?php echo $result['stock_dvd']?></td>
+                <td><?php echo $result['price']?></td>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>
+    </p>
+    <p>stok tertinggi adalah <u><?php echo max($stock);?></u>, sedangkan terendah adalah <u><?php echo min($stock);?></u></p>
+
+</body>
+</html>
