@@ -1,0 +1,24 @@
+<p><b>Data Movie stok < 5 dan orderby price</b></p>
+        <table border="1" cellpadding="2">
+            <tr bgcolor="#e5e5e5">
+                <td>KODE</td>
+                <td>NAME</td>
+                <td>STOCK DVD</td>
+                <td>PRICE</td>
+              </tr>
+            <?php
+            $no=0;
+            $query    =mysqli_query($koneksi, "SELECT * FROM movie WHERE stock_dvd<5 ORDER BY price");
+            while($result    =mysqli_fetch_array($query)){
+            $no++
+            ?>
+            <tr>
+                <td><?php echo $result['code']?></td>
+                <td><?php echo $result['name']?></td>
+                <td><?php echo $result['stock_dvd']?></td>
+                <td><?php echo $result['price']?></td>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>
