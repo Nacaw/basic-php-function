@@ -1,3 +1,13 @@
+<?php
+  include "koneksi.php";
+?>
+
+<html>
+<head>
+    <title> Penggunaan inner join untuk mencari data sesuai kode pada 2 tabel </title>
+</head>
+<body>
+
 <p><b>INPUT DATA MOVIE</b></p>
 
 <form action="proses.php" method="post">
@@ -41,3 +51,6 @@
             }
             ?>
         </table>
+
+</body>
+</html>
