@@ -1,3 +1,13 @@
+<?php
+  include "koneksi.php";
+?>
+
+<html>
+<head>
+    <title> Penggunaan inner join untuk mencari data sesuai kode pada 2 tabel </title>
+</head>
+<body>
+
 <p><b>Data Movie dari terbesar (DESC)</b></p>
         <table border="1" cellpadding="2">
             <tr bgcolor="#e5e5e5">
@@ -22,3 +32,6 @@
             }
             ?>
         </table>
+
+</body>
+</html>>
