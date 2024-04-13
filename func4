@@ -1,0 +1,25 @@
+<p><b>Jumlah data MOVIE dengan field E :</b></p>
+    <p>
+        <table border="1" cellpadding="2">
+            <tr bgcolor="#e5e5e5">
+                <td>No.</td>
+                <td>KODE</td>
+                <td>NAME</td>
+              </tr>
+            <?php
+            $no=0;
+            $query    =mysqli_query($koneksi, "SELECT * FROM movie WHERE name LIKE '%e%'");
+            while($result    =mysqli_fetch_array($query)){
+            $no++
+            ?>
+            <tr>
+                <td><?php echo $no; ?></td>
+                <td><?php echo $result['code']?></td>
+                <td><?php echo $result['name']?></td>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>
+
+    </p>
