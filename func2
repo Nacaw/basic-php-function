@@ -1,0 +1,23 @@
+<p><b>Nama Penyewa Film Avenger : </b></p>
+    <p>
+        <table border="1" cellpadding="2">
+            <tr bgcolor="#e5e5e5">
+                <td>No.</td>
+                <td>COSTUMER</td>
+              </tr>
+            <?php
+            $no=0;
+            $query = mysqli_query($koneksi, "SELECT * FROM movie INNER JOIN costumer WHERE movie.code = 'MOV3' AND costumer.code = 'MOV3'");
+            while($result    =mysqli_fetch_array($query)){
+            $no++
+            ?>
+            <tr>
+                <td><?php echo $no; ?></td>
+                <td><?php echo $result['costumer']?></td>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>
+
+    </p>
