@@ -1,0 +1,43 @@
+<p><b>INPUT DATA MOVIE</b></p>
+
+<form action="proses.php" method="post">
+<div class="panel-body">
+<div class="input-group"> <span class="input-group-addon">KODE : </span> <i><input class="form-control" placeholder="contoh : nama kode movie" type="text" name="code"></i></div>
+                                    <br>
+<div class="input-group">
+<span class="input-group-addon">NAME : </span><i><input class="form-control" placeholder="contoh : NAMA MOVIE" type="text" name="name"></i></div>
+                                    <br>
+<div class="input-group">
+<span class="input-group-addon">STOCK DVD : </span><i><input class="form-control" placeholder="contoh : Jumlah Stok" type="text" name="stock_dvd"></i></div>
+                                    <br>
+<div class="input-group">
+<span class="input-group-addon">PRICE : </span><i><input class="form-control" placeholder="contoh : Harga" type="text" name="price"></i></div>
+                                    <br>
+<button type="submit" class="btn btn-info" name="tambah">Tambah</button>
+</div></form>        
+
+<P>DATA UPDATE</P>
+
+        <table border="1" cellpadding="2">
+            <tr bgcolor="#e5e5e5">
+                <td>KODE</td>
+                <td>NAME</td>
+                <td>STOCK DVD</td>
+                <td>PRICE</td>
+              </tr>
+            <?php
+            $no=0;
+            $query    =mysqli_query($koneksi, "SELECT * FROM movie");
+            while($result    =mysqli_fetch_array($query)){
+            $no++
+            ?>
+            <tr>
+                <td><?php echo $result['code']?></td>
+                <td><?php echo $result['name']?></td>
+                <td><?php echo $result['stock_dvd']?></td>
+                <td><?php echo $result['price']?></td>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>
